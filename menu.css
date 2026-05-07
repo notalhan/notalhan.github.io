@@ -1,0 +1,379 @@
+/* ============================================
+   ANKA LOUNGE — MENU PAGE (mobile-first)
+   ============================================ */
+
+.menu-page {
+  background:
+    radial-gradient(1200px 600px at 50% -200px, rgba(255, 122, 0, 0.08), transparent 70%),
+    var(--bg);
+  min-height: 100vh;
+}
+
+/* ============== TOP BAR ============== */
+.menu-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(11, 11, 11, 0.78);
+  backdrop-filter: saturate(180%) blur(18px);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+
+.menu-topbar-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 8px 16px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-back {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  transition: color var(--t-fast), background var(--t-fast), border-color var(--t-fast);
+  min-height: 40px;
+}
+
+.menu-back:hover,
+.menu-back:active {
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: rgba(255, 122, 0, 0.4);
+}
+
+.menu-logo {
+  justify-self: center;
+  display: inline-flex;
+  align-items: center;
+}
+
+.menu-topbar-spacer {
+  justify-self: end;
+  width: 40px;
+  height: 40px;
+}
+
+/* ============== HERO ============== */
+.menu-hero {
+  text-align: center;
+  padding: 110px 20px 24px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.menu-hero .eyebrow {
+  margin-bottom: 12px;
+  font-size: 0.72rem;
+}
+
+.menu-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 8vw, 3.6rem);
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.menu-hero-sub {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ============== STICKY CATEGORY NAV ============== */
+.menu-cats {
+  position: sticky;
+  top: 74px;
+  z-index: 90;
+  background: rgba(11, 11, 11, 0.92);
+  backdrop-filter: saturate(180%) blur(18px);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  border-bottom: 1px solid var(--line);
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.menu-cats-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 14px 16px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu-cats-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-cat {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  white-space: nowrap;
+  min-height: 40px;
+  transition: color var(--t-fast), background var(--t-fast),
+    border-color var(--t-fast), transform var(--t-fast);
+}
+
+.menu-cat:active {
+  transform: scale(0.96);
+}
+
+.menu-cat:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.menu-cat.active {
+  color: #0b0b0b;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.menu-cat-emoji {
+  font-size: 1.05em;
+  line-height: 1;
+}
+
+/* ============== MAIN ============== */
+.menu-main {
+  padding: 0 16px 100px;
+}
+
+/* ============== SECTION ============== */
+.menu-section {
+  scroll-margin-top: 130px;
+  margin-bottom: 56px;
+  background: linear-gradient(180deg, var(--bg-elev) 0%, rgba(19, 19, 19, 0.6) 100%);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 28px 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(255, 122, 0, 0.08), transparent 50%);
+  pointer-events: none;
+}
+
+.menu-section > * {
+  position: relative;
+}
+
+.menu-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.menu-section-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 5vw, 2.1rem);
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.1;
+  flex: 1 1 auto;
+}
+
+/* Sub-block within a section */
+.menu-block {
+  margin-bottom: 28px;
+}
+
+.menu-block:last-child {
+  margin-bottom: 0;
+}
+
+.menu-block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.menu-block-head h3 {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-style: normal;
+}
+
+/* Price pill */
+.menu-price-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: var(--accent);
+  color: #0b0b0b;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px -8px rgba(255, 122, 0, 0.6);
+}
+
+/* ============== ITEM LIST ============== */
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.menu-list li:last-child {
+  border-bottom: none;
+}
+
+.m-name {
+  flex: 1 1 auto;
+  color: var(--text);
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.m-desc {
+  display: block;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 4px;
+  line-height: 1.45;
+}
+
+/* Hide leader dots on phone (cleaner) */
+.m-dots {
+  display: none;
+}
+
+.m-price {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: right;
+  padding-top: 1px;
+}
+
+/* Two-column lists (shared price categories) */
+.menu-list-2col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.menu-list-2col .m-name {
+  flex: 1 1 auto;
+}
+
+/* ============== NOTE ============== */
+.menu-note {
+  margin-top: 18px;
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: rgba(255, 122, 0, 0.06);
+  border: 1px solid rgba(255, 122, 0, 0.18);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.menu-note a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ============== TABLET ============== */
+@media (min-width: 640px) {
+  .menu-topbar-inner { padding: 10px 24px; }
+  .menu-back { font-size: 0.92rem; padding: 10px 16px; }
+  .menu-back svg { width: 18px; height: 18px; }
+  .menu-topbar-spacer { width: 60px; }
+
+  .menu-hero { padding: 130px 24px 30px; }
+
+  .menu-cats { top: 74px; }
+  .menu-cats-inner { gap: 8px; padding: 14px 24px; }
+  .menu-cat { padding: 11px 18px; font-size: 0.93rem; }
+
+  .menu-main { padding: 0 24px 100px; }
+
+  .menu-section {
+    padding: 40px 36px;
+    margin-bottom: 64px;
+  }
+
+  .menu-section-head { margin-bottom: 28px; padding-bottom: 22px; }
+
+  .menu-list li {
+    padding: 16px 0;
+    align-items: baseline;
+  }
+
+  .m-name { font-size: 1rem; }
+  .m-desc { font-size: 0.85rem; }
+  .m-price { font-size: 1.05rem; }
+
+  .menu-list-2col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 32px;
+  }
+}
+
+/* ============== DESKTOP ============== */
+@media (min-width: 960px) {
+  .menu-section { padding: 48px 48px; }
+  .menu-section-head h2 { font-size: 2.2rem; }
+}
