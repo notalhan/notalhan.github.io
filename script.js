@@ -25,6 +25,7 @@
   const setMenu = (open) => {
     navToggle.classList.toggle('open', open);
     overlay.classList.toggle('open', open);
+    navbar.classList.toggle('menu-open', open);
     overlay.setAttribute('aria-hidden', String(!open));
     navToggle.setAttribute('aria-expanded', String(open));
     document.body.style.overflow = open ? 'hidden' : '';

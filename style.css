@@ -184,10 +184,17 @@ h3 {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 110;
   transition: background var(--t-med), backdrop-filter var(--t-med),
     border-color var(--t-med), padding var(--t-med);
   border-bottom: 1px solid transparent;
+}
+
+.navbar.menu-open {
+  background: rgba(11, 11, 11, 0.7);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom-color: var(--line);
 }
 
 .navbar.scrolled {

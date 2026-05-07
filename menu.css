@@ -19,7 +19,6 @@
   background: rgba(11, 11, 11, 0.78);
   backdrop-filter: saturate(180%) blur(18px);
   -webkit-backdrop-filter: saturate(180%) blur(18px);
-  border-bottom: 1px solid var(--line);
 }
 
 .menu-topbar-inner {
@@ -96,7 +95,7 @@
 /* ============== STICKY CATEGORY NAV ============== */
 .menu-cats {
   position: sticky;
-  top: 74px;
+  top: 72px;
   z-index: 90;
   background: rgba(11, 11, 11, 0.78);
   backdrop-filter: saturate(180%) blur(18px);
@@ -344,7 +343,7 @@
 
   .menu-hero { padding: 130px 24px 30px; }
 
-  .menu-cats { top: 74px; }
+  .menu-cats { top: 72px; }
   .menu-cats-inner { gap: 8px; padding: 14px 24px; }
   .menu-cat { padding: 11px 18px; font-size: 0.93rem; }
 
