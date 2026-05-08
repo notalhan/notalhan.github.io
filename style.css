@@ -849,6 +849,44 @@ h3 {
   margin-top: 8px;
 }
 
+.footer-credit {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-top: -12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-credit a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.footer-credit a:hover {
+  text-decoration: underline;
+}
+
+.footer-heart {
+  color: var(--accent);
+  display: inline-block;
+  animation: footer-heart-pulse 1.2s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes footer-heart-pulse {
+  0%, 100% { transform: scale(1); }
+  20%      { transform: scale(1.25); }
+  40%      { transform: scale(0.95); }
+  60%      { transform: scale(1.15); }
+  80%      { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-heart { animation: none; }
+}
+
 /* ============================================
    WHATSAPP FAB
    ============================================ */
