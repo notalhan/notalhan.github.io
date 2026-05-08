@@ -49,6 +49,7 @@ body {
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -444,6 +445,68 @@ h3 {
 .hero-title span {
   color: var(--accent);
   font-style: italic;
+}
+
+.hero-logo-frame {
+  display: block;
+  width: clamp(280px, 60vw, 560px);
+  aspect-ratio: 2.68 / 1;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.hero-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  animation:
+    hero-wings 5s ease-in-out infinite,
+    hero-glow 3.6s ease-in-out infinite,
+    hero-glitch 7s steps(1, end) infinite;
+  transform-origin: 50% 60%;
+  will-change: transform, filter;
+}
+
+@keyframes hero-wings {
+  0%, 100% { transform: scaleX(1) scaleY(1); }
+  50%      { transform: scaleX(1.025) scaleY(0.985); }
+}
+
+@keyframes hero-glow {
+  0% {
+    filter:
+      drop-shadow(-10px 0 12px rgba(255, 122, 0, 0.55))
+      drop-shadow(0 0 22px rgba(255, 122, 0, 0.35));
+  }
+  50% {
+    filter:
+      drop-shadow(10px 0 18px rgba(255, 140, 20, 0.85))
+      drop-shadow(0 0 34px rgba(255, 122, 0, 0.55));
+  }
+  100% {
+    filter:
+      drop-shadow(-10px 0 12px rgba(255, 122, 0, 0.55))
+      drop-shadow(0 0 22px rgba(255, 122, 0, 0.35));
+  }
+}
+
+@keyframes hero-glitch {
+  0%,    93%   { opacity: 1; }
+  93.3%        { opacity: 0; }
+  93.7%        { opacity: 1; }
+  94%          { opacity: 0.15; }
+  94.4%        { opacity: 1; }
+  95%          { opacity: 0; }
+  96%          { opacity: 1; }
+  96.4%        { opacity: 0.4; }
+  96.8%        { opacity: 1; }
+  100%         { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo { animation: none; }
 }
 
 .hero-subtitle {
@@ -883,6 +946,27 @@ h3 {
 
   .hero { padding: 100px 18px 60px; }
   .hero-cta .btn { padding: 12px 22px; font-size: 0.9rem; }
+
+  .hero-logo-frame {
+    width: 100vw;
+    max-width: 560px;
+    aspect-ratio: 2 / 1;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+
+  .hero-logo {
+    width: 140%;
+    max-width: none;
+    height: 140%;
+    margin-left: -20%;
+    margin-top: -20%;
+  }
+
+  .hero-subtitle {
+    max-width: 360px;
+    padding-inline: 12px;
+  }
 
   .gallery-grid {
     grid-template-columns: 1fr;
