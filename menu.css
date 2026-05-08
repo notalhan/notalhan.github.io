@@ -178,12 +178,39 @@
   overflow: hidden;
 }
 
+@property --glow-x {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --glow-y {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
 .menu-section::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top right, rgba(255, 122, 0, 0.08), transparent 50%);
+  background: radial-gradient(circle at var(--glow-x) var(--glow-y), rgba(255, 122, 0, 0.08), transparent 50%);
   pointer-events: none;
+  animation: menu-section-glow 28s ease-in-out infinite;
+}
+
+@keyframes menu-section-glow {
+  0%   { --glow-x: 100%; --glow-y: 0%; }
+  25%  { --glow-x: 100%; --glow-y: 100%; }
+  50%  { --glow-x: 0%;   --glow-y: 100%; }
+  75%  { --glow-x: 0%;   --glow-y: 0%; }
+  100% { --glow-x: 100%; --glow-y: 0%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-section::before {
+    animation: none;
+  }
 }
 
 .menu-section > * {

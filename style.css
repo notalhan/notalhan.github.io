@@ -496,7 +496,7 @@ h3 {
    ============================================ */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 22px;
 }
 
@@ -860,6 +860,10 @@ h3 {
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
 
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .location-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -885,6 +889,10 @@ h3 {
     grid-auto-rows: 220px;
   }
   .gallery-wide { grid-column: span 1; }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 
   .service-card { padding: 30px 22px; }
   .contact-card { padding: 32px 22px; }
